@@ -29,13 +29,18 @@ export const TopPicks = ({
   const [showModal, setShowModal] = useState(false);
   const [color, setColor] = useState(activeColor);
 
+  // Sync color with activeColor prop
   useEffect(() => {
     setColor(activeColor);
   }, [activeColor]);
 
-  useEffect(() => {
-    onChange(color);
-  }, [color]);
+  // Update parent with new color
+  const handleColorChange = (newColor: string) => {
+    if (newColor !== color) {
+      setColor(newColor);
+      onChange(newColor); // Pass updated color to the parent
+    }
+  };
 
   let colors;
   switch (type) {
@@ -49,9 +54,8 @@ export const TopPicks = ({
       colors = DEFAULT_CANVAS_BACKGROUND_PICKS;
       break;
     default:
-      if (topPicks) {
-        colors = topPicks;
-      } else {
+      colors = topPicks || [];
+      if (!colors.length) {
         console.error("Invalid type for TopPicks");
         return null;
       }
@@ -60,6 +64,7 @@ export const TopPicks = ({
   return (
     <>
       <div className="color-picker__top-picks">
+        {/* Predefined color buttons */}
         {colors.map((presetColor: string) => (
           <button
             className={clsx("color-picker__button", {
@@ -74,34 +79,42 @@ export const TopPicks = ({
             key={presetColor}
             type="button"
             title={presetColor}
-            onClick={() => onChange(presetColor)}
+            onClick={() => handleColorChange(presetColor)}
             data-testid={`color-top-pick-${presetColor}`}
+            aria-label={`Select ${presetColor} color`}
           >
             <div className="color-picker__button-outline" />
           </button>
         ))}
 
+        {/* Rainbow button to trigger modal */}
         <button
           className={clsx("color-picker__button", "rainbow-button")}
           onClick={() => setShowModal(true)}
           title="Custom color"
           data-testid="color-top-pick-custom"
+          aria-label="Select custom color"
         >
           <div className="color-picker__button-outline" />
         </button>
-
       </div>
 
+      {/* Modal for custom color picker */}
       {showModal && (
-        <div className="color-picker__modal-backdrop" onClick={() => setShowModal(false)}>
+        <div
+          className="color-picker__modal-backdrop"
+          onClick={() => setShowModal(false)} // Close the modal when clicking outside
+          aria-hidden="true"
+        >
           <div
             className="color-picker__modal"
-            onClick={(e) => e.stopPropagation()} // Prevent closing modal when clicking inside it
+            onClick={(e) => e.stopPropagation()} // Prevent closing modal when clicking inside
           >
-            <HexColorPicker color={color} onChange={setColor} />
+            <HexColorPicker color={color} onChange={handleColorChange} />
             <button
               className="color-picker__close"
               onClick={() => setShowModal(false)}
+              aria-label="Close color picker modal"
             >
               Close
             </button>

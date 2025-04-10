@@ -164,6 +164,34 @@ export const changeProperty = (
   });
 };
 
+// type Props = {
+//   value: number;
+//   onChange: (value: number) => void;
+//   min?: number;
+//   max?: number;
+//   step?: number;
+//   testId?: string;
+// };
+
+// export const StrokeWidthSlider = ({
+//   value,
+//   onChange,
+//   min = 1,
+//   max = 8,
+//   step = 1,
+//   testId,
+// }: Props) => {
+//   const rangeRef = useRef<HTMLInputElement>(null);
+
+//   useEffect(() => {
+//     if (rangeRef.current) {
+//       const input = rangeRef.current;
+//       const percentage = ((value - min) / (max - min)) * 100;
+//       input.style.background = `linear-gradient(to right, var(--color-slider-track) 0%, var(--color-slider-track) ${percentage}%, var(--button-bg) ${percentage}%, var(--button-bg) 100%)`;
+//     }
+//   }, [value, min, max]);
+// }
+
 export const getFormValue = function <T extends Primitive>(
   elements: readonly ExcalidrawElement[],
   appState: AppState,
@@ -486,41 +514,55 @@ export const actionChangeStrokeWidth = register({
     };
   },
   PanelComponent: ({ elements, appState, updateData }) => (
+    //stroke slider
     <fieldset>
-      <legend>{t("labels.strokeWidth")}</legend>
-      <ButtonIconSelect
-        group="stroke-width"
-        options={[
-          {
-            value: STROKE_WIDTH.thin,
-            text: t("labels.thin"),
-            icon: StrokeWidthBaseIcon,
-            testId: "strokeWidth-thin",
-          },
-          {
-            value: STROKE_WIDTH.bold,
-            text: t("labels.bold"),
-            icon: StrokeWidthBoldIcon,
-            testId: "strokeWidth-bold",
-          },
-          {
-            value: STROKE_WIDTH.extraBold,
-            text: t("labels.extraBold"),
-            icon: StrokeWidthExtraBoldIcon,
-            testId: "strokeWidth-extraBold",
-          },
-        ]}
-        value={getFormValue(
-          elements,
-          appState,
-          (element) => element.strokeWidth,
-          (element) => element.hasOwnProperty("strokeWidth"),
-          (hasSelection) =>
-            hasSelection ? null : appState.currentItemStrokeWidth,
-        )}
-        onChange={(value) => updateData(value)}
-      />
+      {/* <legend>{t("labels.strokeWidth")}</legend> */}
+      
+      <label className="control-label">
+        {t("labels.strokeWidth")}
+        
+        <div className="range-wrapper">
+          <input
+            type="range"
+            min={STROKE_WIDTH.thin} // Set the minimum value (thin stroke width)
+            max={STROKE_WIDTH.extraBold} // Set the maximum value (extra bold stroke width)
+            step={1} // You can set the step to 1 if you want to go in increments of 1
+            value={
+              getFormValue(
+                elements,
+                appState,
+                (element) => element.strokeWidth,
+                (element) => element.hasOwnProperty("strokeWidth"),
+                (hasSelection) =>
+                  hasSelection ? null : appState.currentItemStrokeWidth,
+              ) ?? 0 // 👈 fallback to 0 if null
+            }
+            
+            onChange={(event) => updateData(+event.target.value)} // Update the value when the slider is changed
+            className="range-input"
+            data-testid="strokeWidth-slider"
+          />
+          
+          {/* Show the value as a bubble above the slider */}
+          <div className="value-bubble">
+            {getFormValue(
+              elements,
+              appState,
+              (element) => element.strokeWidth,
+              (element) => element.hasOwnProperty("strokeWidth"),
+              (hasSelection) =>
+                hasSelection ? null : appState.currentItemStrokeWidth,
+            )}
+          </div>
+
+          {/* Show the minimum value label */}
+          {/* <div className="zero-label">{STROKE_WIDTH.thin}</div> */}
+          {/* Show the maximum value label */}
+          {/* <div className="max-label">{STROKE_WIDTH.extraBold}</div> */}
+        </div>
+      </label>
     </fieldset>
+
   ),
 });
 

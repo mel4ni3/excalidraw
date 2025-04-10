@@ -309,7 +309,7 @@ export const ChangeCanvasBackground = () => {
     <div style={{ marginTop: "0.5rem" }}>
       <div
         data-testid="canvas-background-label"
-        style={{ fontSize: ".75rem", marginBottom: ".5rem" }}
+        style={{ fontSize: "0.75rem", marginBottom: ".5rem" }}
       >
         {t("labels.canvasBackground")}
       </div>

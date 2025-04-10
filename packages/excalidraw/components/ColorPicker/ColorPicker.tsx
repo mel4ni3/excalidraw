@@ -1,6 +1,7 @@
 import * as Popover from "@radix-ui/react-popover";
 import clsx from "clsx";
 import { useRef } from "react";
+import { ChromePicker } from "react-color"; // Import the color picker
 
 import {
   COLOR_OUTLINE_CONTRAST_THRESHOLD,
@@ -176,6 +177,15 @@ const ColorPickerPopupContent = ({
       ) : (
         colorInputJSX
       )}
+      {/* Add the ChromePicker for the color wheel */}
+      <div style={{ marginTop: "1rem" }}>
+        <ChromePicker
+          color={color}
+          onChange={(colorResult) => {
+            onChange(colorResult.hex); // Update the color when the user selects a color
+          }}
+        />
+      </div>
     </PropertiesPopover>
   );
 };

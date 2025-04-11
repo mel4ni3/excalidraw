@@ -704,6 +704,35 @@ export const actionChangeFontSize = register({
           updateData(fontSize);
         }}
       />
+
+<div className="font-size-display">
+        <span className="font-size-display-text">
+          {getFormValue(
+            elements,
+            appState,
+            (element) => {
+              if (isTextElement(element)) {
+                return element.fontSize;
+              }
+              const boundTextElement = getBoundTextElement(
+                element,
+                app.scene.getNonDeletedElementsMap(),
+              );
+              return boundTextElement?.fontSize ?? null;
+            },
+            (element) =>
+              isTextElement(element) ||
+              getBoundTextElement(
+                element,
+                app.scene.getNonDeletedElementsMap(),
+              ) !== null,
+            (hasSelection) =>
+              hasSelection
+                ? null
+                : appState.currentItemFontSize || DEFAULT_FONT_SIZE,
+          )}
+        </span>
+      </div>
 {/* 
       <Range
         elements={elements}

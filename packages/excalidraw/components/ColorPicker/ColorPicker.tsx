@@ -181,7 +181,9 @@ const ColorPickerPopupContent = ({
         <ChromePicker
           color={color}
           onChange={(colorResult) => {
-            onChange(colorResult.hex); // Update the color when the user selects a color
+            if (colorResult?.hex) { // checks if hex property is valid
+              onChange(colorResult.hex);// Update the color when the user selects a color
+            }
           }}
           styles={{
             default: {

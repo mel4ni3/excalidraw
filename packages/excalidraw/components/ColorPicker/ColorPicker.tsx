@@ -1,7 +1,7 @@
 import * as Popover from "@radix-ui/react-popover";
 import clsx from "clsx";
 import { useRef } from "react";
-import { ChromePicker } from "react-color";
+// import { ChromePicker } from "react-color";
 
 import {
   COLOR_OUTLINE_CONTRAST_THRESHOLD,
@@ -177,22 +177,22 @@ const ColorPickerPopupContent = ({
       ) : (
         colorInputJSX
       )}
-      <div style={{ marginTop: "1rem", maxWidth: "100%", overflow: "hidden" }}>
-        <ChromePicker
-          color={color}
-          onChange={(colorResult) => {
-            onChange(colorResult.hex); // Update the color when the user selects a color
-          }}
-          styles={{
-            default: {
-              picker: {
-                width: "100%", // Make the picker fit the parent container
-                boxSizing: "border-box", // Ensure padding is included in the width
-              }
-            },
-          }}
-        />
-      </div>
+      {/* <div style={{ marginTop: "1rem", maxWidth: "100%", overflow: "hidden" }}>
+         <ChromePicker
+           color={color}
+           onChange={(colorResult) => {
+             onChange(colorResult.hex); // Update the color when the user selects a color
+           }}
+           styles={{
+             default: {
+               picker: {
+                 width: "100%", // Make the picker fit the parent container
+                 boxSizing: "border-box", // Ensure padding is included in the width
+               }
+             },
+           }}
+         />
+       </div> */}
     </PropertiesPopover>
   );
 };

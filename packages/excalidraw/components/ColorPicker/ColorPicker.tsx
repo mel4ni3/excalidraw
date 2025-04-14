@@ -1,7 +1,7 @@
 import * as Popover from "@radix-ui/react-popover";
 import clsx from "clsx";
 import { useRef } from "react";
-// import { ChromePicker } from "react-color";
+import { ChromePicker } from "react-color";
 
 import {
   COLOR_OUTLINE_CONTRAST_THRESHOLD,
@@ -177,7 +177,7 @@ const ColorPickerPopupContent = ({
       ) : (
         colorInputJSX
       )}
-      {/* <div style={{ marginTop: "1rem", maxWidth: "100%", overflow: "hidden" }}>
+      <div style={{ marginTop: "1rem", maxWidth: "100%", overflow: "hidden" }}>
          <ChromePicker
            color={color}
            onChange={(colorResult) => {
@@ -192,7 +192,7 @@ const ColorPickerPopupContent = ({
              },
            }}
          />
-       </div> */}
+       </div>
     </PropertiesPopover>
   );
 };

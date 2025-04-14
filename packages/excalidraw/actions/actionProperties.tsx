@@ -864,7 +864,7 @@ export const actionChangeFontFamily = register({
 
         while (
           i < selectedTextElements.length &&
-          textLengthAccumulator < 5000
+          textLengthAccumulator < 5000 // try to see if you can have a bigger range of width size
         ) {
           const textElement = selectedTextElements[i] as ExcalidrawTextElement;
           textLengthAccumulator += textElement?.originalText.length || 0;

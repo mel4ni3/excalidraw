@@ -1833,3 +1833,12 @@ export const actionChangeArrowType = register({
     );
   },
 });
+
+//if (
+  //!selectedElementIds.get(element.id) &&
+  //element.id !== appState.editingTextElement?.id
+//) {
+  //return element;
+//}
+//return callback(element);
+

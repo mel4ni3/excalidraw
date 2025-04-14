@@ -64,6 +64,7 @@
     "medium": "Medium",
     "large": "Large",
     "veryLarge": "Very large",
+    "superLarge" : "Super large",
     "solid": "Solid",
     "hachure": "Hachure",
     "zigzag": "Zigzag",

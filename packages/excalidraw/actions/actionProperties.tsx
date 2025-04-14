@@ -164,33 +164,6 @@ export const changeProperty = (
   });
 };
 
-// type Props = {
-//   value: number;
-//   onChange: (value: number) => void;
-//   min?: number;
-//   max?: number;
-//   step?: number;
-//   testId?: string;
-// };
-
-// export const StrokeWidthSlider = ({
-//   value,
-//   onChange,
-//   min = 1,
-//   max = 8,
-//   step = 1,
-//   testId,
-// }: Props) => {
-//   const rangeRef = useRef<HTMLInputElement>(null);
-
-//   useEffect(() => {
-//     if (rangeRef.current) {
-//       const input = rangeRef.current;
-//       const percentage = ((value - min) / (max - min)) * 100;
-//       input.style.background = `linear-gradient(to right, var(--color-slider-track) 0%, var(--color-slider-track) ${percentage}%, var(--button-bg) ${percentage}%, var(--button-bg) 100%)`;
-//     }
-//   }, [value, min, max]);
-// }
 
 export const getFormValue = function <T extends Primitive>(
   elements: readonly ExcalidrawElement[],
@@ -655,7 +628,7 @@ export const actionChangeStrokeStyle = register({
             icon: StrokeStyleDottedIcon,
           },
         ]}
-        value={getFormValue(
+        value={getFormValue(  
           elements,
           appState,
           (element) => element.strokeStyle,

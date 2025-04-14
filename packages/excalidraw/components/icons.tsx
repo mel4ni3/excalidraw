@@ -1490,6 +1490,37 @@ export const FontSizeExtraLargeIcon = createIcon(
   modifiedTablerIconProps,
 );
 
+export const FontSizeSuperLargeIcon = createIcon(
+  <>
+    {/* First X */}
+    <path
+      d="M1.667 3.333L8.333 16.667M8.333 3.333L1.667 16.667"
+      stroke="currentColor"
+      strokeWidth="1.25"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    {/* Second X */}
+    <path
+      d="M10 3.333L16.667 16.667M16.667 3.333L10 16.667"
+      stroke="currentColor"
+      strokeWidth="1.25"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    {/* L */}
+    <path
+      d="M19.167 3.333v13.334h6.666"
+      stroke="currentColor"
+      strokeWidth="1.25"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </>,
+  modifiedTablerIconProps,
+);
+
+
 export const fontSizeIcon = createIcon(
   <g strokeWidth={1.25}>
     <path stroke="none" d="M0 0h24v24H0z" fill="none" />

@@ -1082,11 +1082,11 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
-"@excalidraw/common@file:C:\\Users\\jmfsmof\\Documents\\ITS academy projects\\Lecture\\excalidraw\\packages\\common":
+"@excalidraw/common@file:C:\\Users\\jmfsmof\\Documents\\ITS academy projects\\Lecture\\rename2\\packages\\common":
   version "0.1.0"
   resolved "file:packages/common"
 
-"@excalidraw/element@file:C:\\Users\\jmfsmof\\Documents\\ITS academy projects\\Lecture\\excalidraw\\packages\\element":
+"@excalidraw/element@file:C:\\Users\\jmfsmof\\Documents\\ITS academy projects\\Lecture\\rename2\\packages\\element":
   version "0.1.0"
   resolved "file:packages/element"
 
@@ -1095,7 +1095,7 @@
   resolved "https://registry.npmjs.org/@excalidraw/eslint-config/-/eslint-config-1.0.3.tgz"
   integrity sha512-GemHNF5Z6ga0BWBSX7GJaNBUchLu6RwTcAB84eX1MeckRNhNasAsPCdelDlFalz27iS4RuYEQh0bPE8SRxJgbQ==
 
-"@excalidraw/excalidraw@*", "@excalidraw/excalidraw@file:C:\\Users\\jmfsmof\\Documents\\ITS academy projects\\Lecture\\excalidraw\\packages\\excalidraw":
+"@excalidraw/excalidraw@*", "@excalidraw/excalidraw@file:C:\\Users\\jmfsmof\\Documents\\ITS academy projects\\Lecture\\rename2\\packages\\excalidraw":
   version "0.18.0"
   resolved "file:packages/excalidraw"
   dependencies:
@@ -1141,7 +1141,7 @@
   resolved "https://registry.npmjs.org/@excalidraw/markdown-to-text/-/markdown-to-text-0.1.2.tgz"
   integrity sha512-1nDXBNAojfi3oSFwJswKREkFm5wrSjqay81QlyRv2pkITG/XYB5v+oChENVBQLcxQwX4IUATWvXM5BcaNhPiIg==
 
-"@excalidraw/math@file:C:\\Users\\jmfsmof\\Documents\\ITS academy projects\\Lecture\\excalidraw\\packages\\math":
+"@excalidraw/math@file:C:\\Users\\jmfsmof\\Documents\\ITS academy projects\\Lecture\\rename2\\packages\\math":
   version "0.1.0"
   resolved "file:packages/math"
 
@@ -1169,7 +1169,7 @@
   resolved "https://registry.npmjs.org/@excalidraw/random-username/-/random-username-1.1.0.tgz"
   integrity sha512-nULYsQxkWHnbmHvcs+efMkJ4/9TtvNyFeLyHdeGxW0zHs6P+jYVqcRff9A6Vq9w9JXeDRnRh2VKvTtS19GW2qA==
 
-"@excalidraw/utils@file:C:\\Users\\jmfsmof\\Documents\\ITS academy projects\\Lecture\\excalidraw\\packages\\utils":
+"@excalidraw/utils@file:C:\\Users\\jmfsmof\\Documents\\ITS academy projects\\Lecture\\rename2\\packages\\utils":
   version "0.1.2"
   resolved "file:packages/utils"
   dependencies:
@@ -2463,6 +2463,13 @@
   resolved "https://registry.npmjs.org/@types/pica/-/pica-5.1.3.tgz"
   integrity sha512-13SEyETRE5psd9bE0AmN+0M1tannde2fwHfLVaVIljkbL9V0OfFvKwCicyeDvVYLkmjQWEydbAlsDsmjrdyTOg==
 
+"@types/react-color@3.0.13":
+  version "3.0.13"
+  resolved "https://registry.npmjs.org/@types/react-color/-/react-color-3.0.13.tgz"
+  integrity sha512-2c/9FZ4ixC5T3JzN0LP5Cke2Mf0MKOP2Eh0NPDPWmuVH3NjPyhEjqNMQpN1Phr5m74egAy+p2lYNAFrX1z9Yrg==
+  dependencies:
+    "@types/reactcss" "*"
+
 "@types/react-dom@19.0.4":
   version "19.0.4"
   resolved "https://registry.npmjs.org/@types/react-dom/-/react-dom-19.0.4.tgz"
@@ -2474,6 +2481,11 @@
   integrity sha512-JuRQ9KXLEjaUNjTWpzuR231Z2WpIwczOkBEIvbHNCzQefFIT0L8IqE6NV6ULLyC1SI/i234JnDoMkfg+RjQj2g==
   dependencies:
     csstype "^3.0.2"
+
+"@types/reactcss@*":
+  version "1.2.13"
+  resolved "https://registry.npmjs.org/@types/reactcss/-/reactcss-1.2.13.tgz"
+  integrity sha512-gi3S+aUi6kpkF5vdhUsnkwbiSEIU/BEJyD7kBy2SudWBUuKmJk8AQKE0OVcQQeEy40Azh0lV6uynxlikYIJuwg==
 
 "@types/resize-observer-browser@0.1.7":
   version "0.1.7"
@@ -4952,7 +4964,7 @@ events@^3.2.0:
   resolved "https://registry.npmjs.org/events/-/events-3.3.0.tgz"
   integrity sha512-mQw+2fkQbALzQ7V0MY0IqdnXNOeTtP4r0lN9z7AAawCXgqea7bDii20AYrIBrFd/Hx0M2Ocz6S111CaFkUcb0Q==
 
-"excalidraw-app@file:C:\\Users\\jmfsmof\\Documents\\ITS academy projects\\Lecture\\excalidraw\\excalidraw-app":
+"excalidraw-app@file:C:\\Users\\jmfsmof\\Documents\\ITS academy projects\\Lecture\\rename2\\excalidraw-app":
   version "1.0.0"
   resolved "file:excalidraw-app"
   dependencies:
@@ -9291,7 +9303,7 @@ why-is-node-running@^2.3.0:
     siginfo "^2.0.0"
     stackback "0.0.2"
 
-"with-nextjs@file:C:\\Users\\jmfsmof\\Documents\\ITS academy projects\\Lecture\\excalidraw\\examples\\with-nextjs":
+"with-nextjs@file:C:\\Users\\jmfsmof\\Documents\\ITS academy projects\\Lecture\\rename2\\examples\\with-nextjs":
   version "0.1.0"
   resolved "file:examples/with-nextjs"
   dependencies:
@@ -9299,7 +9311,7 @@ why-is-node-running@^2.3.0:
     react "19.0.0"
     react-dom "19.0.0"
 
-"with-script-in-browser@file:C:\\Users\\jmfsmof\\Documents\\ITS academy projects\\Lecture\\excalidraw\\examples\\with-script-in-browser":
+"with-script-in-browser@file:C:\\Users\\jmfsmof\\Documents\\ITS academy projects\\Lecture\\rename2\\examples\\with-script-in-browser":
   version "1.0.0"
   resolved "file:examples/with-script-in-browser"
   dependencies:
